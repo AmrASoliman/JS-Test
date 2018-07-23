@@ -39,5 +39,4 @@ peaple.forEach(function(person){
 
 james.emit('speak',"Hi all");
 mary.emit('speak',"Give my the ball");
-ryu.emit('Shot', 'I am Angry');
-
+ryu.emit('speak', 'I am Angry');

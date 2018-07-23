@@ -6,8 +6,8 @@ mongoose.connect("mongodb://localhost:27017/node-blog")
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+//app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 var postSchema = new mongoose.Schema({ body: String });
 var Post = mongoose.model('Post', postSchema);
 // Routes
@@ -29,6 +29,6 @@ app.get('/addPost', (req, res) => {
 });
 
 // Listen
-app.listen(3000, () => {
-    console.log('Server listing on 3000');
+app.listen(3001, () => {
+    console.log('Server listing on 3001');
 })
