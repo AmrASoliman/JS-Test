@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <Head>
-        <style>
-        body{background: skyblue; font-family: Verdana; color: white; padding: 30px;}
-        h1{font-size: 36px; text-transform: uppercase;letter-spacing: 2px;text-align: center;}
-        p{font-size: 20px;text-align: center;}
-        </style>
-    </Head>
+  <Head>
+      <link rel="stylesheet" type="text/css" href="/assets/styles.css" />
+  </Head>
     <body>
-        <h1>this is profile page for <%= person %></h1>
+      <% include partials/nav.ejs %>
+        <h2>this is profile page for <%= person %></h2>
         <p><strong> Age: </strong><%= data.age %></p>
         <p><strong> Job: </strong><%= data.job %></p>
         <h2>Hobbies</h2>

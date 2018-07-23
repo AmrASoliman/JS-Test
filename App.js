@@ -15,11 +15,15 @@ var Employee = mongoose.model('Employee', employeeSchema);
 
 // Routes
 app.set('view engine', 'ejs');
-app.get("/", (req, res) => {
+
+app.use('/assets', express.static('assets'));
+app.use(express.static('assets'));
+app.get('/', (req, res) => {
       res.render('index')
    });
 app.get("/Contact", (req, res) => {
-         res.render('Contact')
+
+        res.render('Contact',{qs: req.query});
       });
 app.get("/profile/:name", (req, res) => {
         var data = {age: 42, job: 'ninja',hobbies: ['eating', 'fighting', 'fishing']};
