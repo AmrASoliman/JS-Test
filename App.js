@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var express = require('express');
 var app = express();
 
-mongoose.connect("mongodb://localhost:27017/employeedb");
-
+//mongoose.connect("mongodb://localhost:27017/employeedb");
+mongoose.connect('mongodb+srv://Amr_Soliman:Toti60652@cluster0-zyenb.mongodb.net/employeeDB?retryWrites=true')
 var employeeSchema = mongoose.Schema({
   employeeName: String,
   employeeId: Number,
@@ -34,31 +34,29 @@ app.get("/profile/:name", (req, res) => {
 app.listen(3000, () => {
    console.log('Server listing on 3000');
 });
+
+
 /*
 //Add a Record
 var AmrSoliman = new Employee({
-  employeeName: "Amr Soliman",
-  employeeId: 1,
-  employeeTitel: "Manager"
+  employeeName: "Ibraheem Soliman",
+  employeeId: 2,
+  employeeTitel: "Kid"
 });
 
 AmrSoliman.save(function (err) {
   if (err) return handleError(err);
   // saved!
 });
-*/
 
-/*
-Get All Documnents in a cllection
-Employee.find({}, (err, posts) => {
-  console.log(posts);
-});
-*/
-
-/*
-Update one document
+//Update one document
 Employee.updateOne({ employeeName: 'Amr Soliman' }, { employeeTitel: 'Senior Manager' }, function(err, res) {
   // Updated at most one doc, `res.modifiedCount` contains the number
   // of docs that MongoDB updated
 });
 */
+
+//Get All Documnents in a cllection
+Employee.find({}, (err, posts) => {
+  console.log(posts);
+});
